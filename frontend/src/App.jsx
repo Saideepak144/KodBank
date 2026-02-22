@@ -12,7 +12,8 @@ import AccountDetails from './pages/AccountDetails.jsx'
 import Layout from './components/Layout.jsx'
 
 // Configure axios
-axios.defaults.withCredentials = true
+const isProduction = import.meta.env.PROD
+axios.defaults.withCredentials = !isProduction
 axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
 
 // Add request interceptor to add token from localStorage
