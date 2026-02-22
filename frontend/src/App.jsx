@@ -14,7 +14,8 @@ import Layout from './components/Layout.jsx'
 // Configure axios
 const isProduction = import.meta.env.PROD
 axios.defaults.withCredentials = !isProduction
-axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+// Use production backend URL or fallback to localhost
+axios.defaults.baseURL = 'https://kod-bank-8dg4.vercel.app'
 
 // Add request interceptor to add token from localStorage
 axios.interceptors.request.use(
